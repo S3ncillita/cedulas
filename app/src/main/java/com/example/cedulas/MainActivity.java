@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         jsonObject = response.getJSONObject(i);
                         txtcedula.setText(jsonObject.getString("cedula"));
                         Toast.makeText(getApplicationContext(), "La cedula existe", Toast.LENGTH_SHORT).show();
+                        txtbuscar.setText("");
                     } catch (JSONException e) {
 
                     }

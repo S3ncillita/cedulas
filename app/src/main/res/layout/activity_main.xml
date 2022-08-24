@@ -6,29 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="410dp"
+        android:layout_height="731dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/images2"
+        tools:ignore="MissingConstraints"
+        tools:visibility="@tools:sample/full_names" />
+
     <EditText
         android:id="@+id/txtbuscar"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="52dp"
         android:ems="10"
-        android:hint="Buscar cedula"
         android:gravity="center"
+        android:hint="Cedula a Buscar"
         android:inputType="number"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtcedula"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
 
     <EditText
         android:id="@+id/txtcedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
-        android:hint="Cedula encontrada"
         android:gravity="center"
+        android:hint="Cedula encontrada"
         android:inputType="number"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/btnguardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -38,21 +58,25 @@
         android:id="@+id/btnguardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="236dp"
         android:text="Guardar"
-        app:layout_constraintBottom_toTopOf="@+id/btnBuscar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="@color/purple_500"
+        app:iconTint="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuscar"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="236dp"
         android:text="Buscar Cedula"
+        app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
