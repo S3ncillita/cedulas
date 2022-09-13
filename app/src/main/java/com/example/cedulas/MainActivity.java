@@ -3,6 +3,7 @@ package com.example.cedulas;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText  txtbuscar, txtcedula;
-    Button btnguardar, btnbuscar;
+    Button btnguardar, btnbuscar,btncambiar;
     RequestQueue requestQueue;
 
     @Override
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         txtbuscar = findViewById(R.id.txtbuscar);
         txtcedula = findViewById(R.id.txtcedula);
         btnguardar = findViewById(R.id.btnguardar);
+
         btnguardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 buscar("http://181.94.245.250/datos/buscardatos.php?buscar=" + txtbuscar.getText()+"");
+            }
+        });
+        btncambiar = findViewById(R.id.btncambiando);
+        btncambiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
+                startActivity(intent);
+
             }
         });
 
@@ -91,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "La cedula existe", Toast.LENGTH_SHORT).show();
                         txtbuscar.setText("");
                     } catch (JSONException e) {
-
+                        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
                     }
                 }
 
